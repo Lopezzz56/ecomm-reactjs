@@ -1,0 +1,204 @@
+
+@import "tailwindcss";
+
+        /* primary: '#0077b6',
+        secondary: '#48cae4',
+        brandDark: '#03045e',
+        lightAccent: '#ade8f4',
+        danger: '#ef476f', */
+/* 🎨 Define your custom colors */
+@theme inline {
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-brandDark: oklch(0.225 0.146 265.82);
+  --color-primary: oklch(0.5464 0.1313 242.68);
+  --color-secondary: oklch(0.7789 0.1165 213.7);
+  --color-lightAccent: oklch(0.8948 0.0619 211.54);
+  --color-danger: oklch(0.6476 0.2042 11.07);
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #242424;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #00fcfc;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@layer components {
+  /* === Fortress Button === */
+  .btn {
+    @apply relative inline-flex justify-center items-center rounded-md cursor-pointer select-none whitespace-nowrap no-underline align-middle font-medium transition-all duration-200;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Lato';
+    letter-spacing: 0.5px;
+  }
+
+  .btn::after {
+    content: '';
+    @apply absolute left-0 w-full rounded-md opacity-50 transition-all duration-150;
+    top: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-fortress {
+    color: #1a1a1a;
+    background: linear-gradient(90deg, rgba(235, 235, 255, 0.3), rgba(255, 255, 255, 0));
+    box-shadow: 2.5px 5px 0.5px #333;
+    border: 1px inset rgba(72, 72, 72, 0.5);
+    transform-style: preserve-3d;
+    perspective: 200px;
+  }
+
+  .btn-fortress:hover {
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.7), rgba(235, 240, 255, 0.8));
+  }
+
+  .btn-fortress:active {
+    transform: translateX(1.5px) translateY(2px);
+    outline: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.85);
+  }
+
+  .btn-fortress:active::after {
+    opacity: 0.1;
+  }
+
+  /* === Fortress Card === */
+  .card {
+    @apply relative rounded-lg p-6 transition-all duration-200 shadow-md text-left;
+    font-family: 'Lato';
+    font-weight: 500;
+  }
+
+  .card-fortress {
+    background: linear-gradient(90deg, rgba(235, 235, 255, 0.6), rgba(255, 255, 255, 0));
+    box-shadow: 2.5px 5px 0.5px #333;
+    border: 1px inset rgba(72, 72, 72, 0.5);
+    transform-style: preserve-3d;
+    perspective: 200px;
+    color: #1a1a1a;
+  }
+
+  .card-fortress:hover {
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.7), rgba(235, 240, 255, 0.8));
+  }
+
+  .card-sm {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .card-md {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .card-lg {
+    padding: 2rem;
+    font-size: 1.1rem;
+  }
+  /* ===  Card 2  === */
+    .card-card2 {
+    --_fg: #f0ecec;
+    --_bg: #242424;
+    --_y: -4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    border-radius: 1rem;
+    background: var(--_bg);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    cursor: pointer;
+    isolation: isolate;
+  }
+
+  .card-card2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--_fg);
+    border-radius: inherit;
+    border: 2px solid var(--_bg);
+    transform: translateY(var(--_y));
+    transition: transform 200ms ease-out;
+    z-index: -1;
+  }
+
+  .card-card2:hover {
+    --_y: -8px;
+  }
+
+  .card-card2:active {
+    --_y: 2px;
+  }
+
+  .card-card2:active::after {
+    transition: transform 50ms ease-out;
+  }
+
+  .card-card2:focus-visible {
+    outline-color: black;
+  }
+  .card-nonclickable {
+  cursor: default;
+}
+
+.card-nonclickable:hover {
+  --_y: 0px;
+}
+
+.card-nonclickable:active {
+  --_y: 0px;
+}
+
+.card-nonclickable::after {
+  transition: none;
+}
+
+}

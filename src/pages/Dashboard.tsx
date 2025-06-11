@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AverageRatingChart from '../components/dashboard/AverageRatingChart';
 import CategoryDistributionChart from '../components/dashboard/CategoryDistributionChart';
 import StockLevelChart from '../components/dashboard/StockLevelChart';

@@ -10,7 +10,7 @@ const LoginForm = () => {
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();
 
-  const { loading, error, isAuthenticated } = useSelector((state: any) => state.auth);
+  const { loading, error } = useSelector((state: any) => state.auth);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

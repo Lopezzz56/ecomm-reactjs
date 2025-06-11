@@ -5,14 +5,14 @@ import Login from './pages/LoginPage';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import Layout from './Layout';
-import Products from './pages/Carts';
+// import Products from './pages/Carts';
 import Profile from './pages/Profile';
 import Dashboard from './pages/Dashboard';
 import HomePage from './pages/HomePage';
 import { setRehydrated } from './features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import Carts from './pages/Carts';
+// import Carts from './pages/Carts';
 import CategoryPage from './components/CategoryPage';
 import AddProductForm from './pages/AddProductPage';
 

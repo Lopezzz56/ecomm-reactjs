@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import type { Product } from '../../components/UpdateProduct';
+// import type { Product } from '../../components/UpdateProduct';
 
 const BASE_URL = 'https://dummyjson.com/products';
 

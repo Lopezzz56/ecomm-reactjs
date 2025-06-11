@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Card1 from './ui/Card1';
-import FortressButton from './ui/Button1';
-import { deleteProduct } from '../features/products/productSlice';
+// import FortressButton from './ui/Button1';
+// import { deleteProduct } from '../features/products/productSlice';
 import type { Product } from './UpdateProduct';
-import { useAppDispatch } from '../redux/hooks';
+// import { useAppDispatch } from '../redux/hooks';
 
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const dispatch = useAppDispatch();
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+//   const dispatch = useAppDispatch();
+//   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       try {

@@ -6,7 +6,7 @@ import ProductsSection from '../components/home/ProductsSection';
 
 export default function HomePage() {
   return (
-    <div className="p-6 space-y-6">
+    <div >
       {/* Category Row */}
 
 <CategorySection />

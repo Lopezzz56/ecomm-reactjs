@@ -47,7 +47,7 @@ return (
       {/* Left Arrow */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full"
+  className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full"
       >
         <ChevronLeft />
       </button>
@@ -55,11 +55,12 @@ return (
       {/* Scrollable Categories */}
       <div
         ref={scrollRef}
-        className="flex space-x-4 overflow-x-auto pb-4 px-10 hide-scrollbar scroll-smooth"
-      >
+        className="flex space-x-4 overflow-x-auto pb-4 px-4 sm:px-10 hide-scrollbar scroll-smooth"    
+          >
         {categories.map((cat) => (
           <Link key={cat} to={`/category/${cat}`}>
-            <Card1 size="sm" className="bg-secondary min-w-[10rem] flex-shrink-0 text-center cursor-pointer">
+            <Card1 size="sm" 
+            className="bg-lightAccent min-w-[10rem] flex-shrink-0 text-center cursor-pointer">
               <span className="capitalize font-semibold">{cat.replace(/-/g, " ")}</span>
             </Card1>
           </Link>
@@ -69,7 +70,7 @@ return (
       {/* Right Arrow */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full"
+  className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full"
       >
         <ChevronRight />
       </button>

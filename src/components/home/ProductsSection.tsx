@@ -41,7 +41,7 @@ const ProductsSection = () => {
   return (
     <div className="p-4">
       {/* Top Bar */}
-      <div className="flex justify-between items-center mb-6">
+<div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center mb-6">
         <h1 className="text-3xl font-bold">Products</h1>
 
         {/* Search Bar */}
@@ -84,7 +84,7 @@ const ProductsSection = () => {
       {loading ? (
         <p>Loading products...</p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
   {(sortBy ? sortedProducts : products).map((product) => (
     <Card1 key={product.id} className="flex flex-col w-full h-[400px] overflow-hidden rounded-lg">
       {/* Product Image */}

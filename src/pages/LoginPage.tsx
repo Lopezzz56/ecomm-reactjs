@@ -6,7 +6,7 @@ const LoginPage = () => {
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         <LoginForm />
         
-        {/* 📝 Hint Container */}
+        {/*  Hint Container */}
         <div className="mt-6 bg-blue-50 border border-blue-200 p-4 rounded text-sm">
           <p>Use the credentials below to log in:</p>
           <ul className="mt-2 ml-4 list-disc">
